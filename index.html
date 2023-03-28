@@ -17,6 +17,200 @@
     <title>Portfolio website complete</title>
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* h1 {
+        font-size: 2.5rem;
+        font-family: 'Montserrat';
+        font-weight: normal;
+        color: #444;
+        text-align: center;
+        margin: 2rem 0;
+    } */
+
+    .wrap {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 80rem;
+    }
+
+    .cols {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .col {
+        width: calc(25% - 2rem);
+        margin: 1rem;
+        cursor: pointer;
+    }
+
+    .container_case {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+    }
+
+    .front,
+    .back {
+        background-size: cover;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        background-position: center;
+        -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        text-align: center;
+        min-height: 280px;
+        height: auto;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    .back {
+        background: #cedce7;
+        background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+        background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+        background: linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+    }
+
+    .front:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        opacity: .6;
+        background-color: #000;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 10px;
+    }
+
+    .container_case:hover .front,
+    .container_case:hover .back {
+        -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .inner {
+        -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+        transform: translateY(-50%) translateZ(60px) scale(0.94);
+        top: 50%;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: 1px solid transparent;
+        -webkit-perspective: inherit;
+        perspective: inherit;
+        z-index: 2;
+    }
+
+    .container_case .back {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .container_case .front {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .container_case:hover .back {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .container_case:hover .front {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .front .inner p {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .front .inner p:after {
+        content: '';
+        width: 4rem;
+        height: 2px;
+        position: absolute;
+        background: #C6D4DF;
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -.75rem;
+    }
+
+    .front .inner span {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: 'Montserrat';
+        font-weight: 300;
+    }
+
+    @media screen and (max-width: 64rem) {
+        .col {
+            width: calc(33.333333% - 2rem);
+        }
+    }
+
+    @media screen and (max-width: 48rem) {
+        .col {
+            width: calc(50% - 2rem);
+        }
+    }
+
+    @media screen and (max-width: 32rem) {
+        .col {
+            width: 100%;
+            margin: 0 0 2rem 0;
+        }
+    }
+
     @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
     * {
@@ -279,7 +473,8 @@
 
             <div class="home__img">
 
-                <img style="border: 10px solid #141619;border-radius: 100%;" src="assets\img\perfil.png" alt="">
+                <img id="profile" style="border: 10px solid #141619;border-radius: 100%;" src="assets\img\perfil.png"
+                    alt="">
             </div>
         </section>
         <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
@@ -473,36 +668,244 @@
             </div>
         </div>
         <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+        <h2 class="section-title" style="color:black ;">CASE STUDIES</h2>
+        <div class="wrap">
+            <div class="cols">
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container_case">
+                        <div class="front" style="background-color:#000; height: 27rem;">
+                            <div class="inner">
+                                <span style="font-size:17px;"><span style="color:rgb(6, 240, 69) ;"> Name </span> -
+                                    Nishant Prajapati <br>
+                                    <span style="color:rgb(6, 240, 69) ;">Institution</span> - Confederation College
+                                    <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Program </span> - Graduate Certificate in
+                                    Health Informatics <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Campus </span> - Thunder Bay <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Qualification </span> - MBBS <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> IELTS </span> - 7/6</span>
+                            </div>
+                        </div>
+                        <div class="back" style="height: 27rem;">
+                            <div class="inner">
+                                <h4
+                                    style="color:#000000; font-weight: bolder; text-shadow: 8px 8px 8px rgb(5, 5, 5,0.5);">
+                                    Key Points </h4>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Academic gap of 6 or
+                                    above as bachelor in 2016 </span>
+                                <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">-Over Qualified as
+                                    achieved most reputable degree of
+                                    medical from Ukraine </span> <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Visa in 16 days</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container_case">
+                        <div class="front" style="background-color:#000; height: 27rem;">
+                            <div class="inner">
+                                <span style="font-size:17px;"><span style="color:rgb(6, 240, 69) ;"> Name </span> -
+                                    Vivek Upadhyay <br>
+                                    <span style="color:rgb(6, 240, 69) ;">Institution</span> - Conestoga College
+                                    <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Program </span> -Graduate Certificate in Quality Assurance - Manufacturing and Management<br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Campus </span> - Guelph <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Qualification </span> - Bachelor of Engineering (Mechanical Engineering) <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> IELTS </span> - 7/6</span>
+                            </div>
+                        </div>
+                        <div class="back" style="height: 27rem;">
+                            <div class="inner">
+                                <h4
+                                    style="color:#000000; font-weight: bolder; text-shadow: 8px 8px 8px rgb(5, 5, 5,0.5);">
+                                    Key Points </h4>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- No.of Backlog - 37 </span>
+                                <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">-Previous Refusal in Canada through other consultant </span> <br>
+                                
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container_case">
+                        <div class="front" style="background-color:#000; height: 27rem;">
+                            <div class="inner">
+                                <span style="font-size:17px;"><span style="color:rgb(6, 240, 69) ;"> Name </span> -
+                                Hardik Chaudhari  <br>
+                                    <span style="color:rgb(6, 240, 69) ;">Institution</span> - Canadore College
+                                    <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Program </span> -  Diploma in Computer Systems - Networking Technician  <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Campus </span> - canadore St Stanford - Scarborough <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Qualification </span> - 12th Grade (Science A) <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> IELTS </span> - 6.5/6</span>
+                            </div>
+                        </div>
+                        <div class="back" style="height: 27rem;">
+                            <div class="inner">
+                                <h4
+                                    style="color:#000000; font-weight: bolder; text-shadow: 8px 8px 8px rgb(5, 5, 5,0.5);">
+                                    Key Points </h4>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Academic gap of 2 years after 12th Grade </span>
+                                <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">-Visa in 16 days </span> <br>
+                                
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container_case">
+                        <div class="front" style="background-color:#000; height: 27rem;">
+                            <div class="inner">
+                                <span style="font-size:17px;"><span style="color:rgb(6, 240, 69) ;"> Name </span> -
+                                Khalik Kasmani <br>
+                                    <span style="color:rgb(6, 240, 69) ;">Institution</span> - Georgian College 
+                                    <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Program </span> - Graduate Certificate in Mobile Application Development  <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Campus </span> - Barrie <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Qualification </span> - Bachelor in Computer Application  <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> IELTS </span> - 7.5/6</span>
+                            </div>
+                        </div>
+                        <div class="back" style="height:27rem ;">
+                            <div class="inner">
+                                <h4
+                                    style="color:#000000; font-weight: bolder; text-shadow: 8px 8px 8px rgb(5, 5, 5,0.5);">
+                                    Key Points </h4>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">-  Previous Refusal - 1 in Canada  </span>
+                                <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">-Academic gap of  2.5 or above  </span> <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Visa in  8 days</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container_case">
+                        <div class="front" style="background-color:#000; height: 27rem;">
+                            <div class="inner">
+                                <span style="font-size:17px;"><span style="color:rgb(6, 240, 69) ;"> Name </span> -
+                                Raj Patel <br>
+                                    <span style="color:rgb(6, 240, 69) ;">Institution</span> - Conestoga College
+                                    <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Program </span> - Graduate Certificate in Project Management <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Campus </span> -  Doon  <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Qualification </span> - Bachelor in Mechanical engineering <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> IELTS </span> 6.5/6<span>
+                            </div>
+                        </div>
+                        <div class="back" style="height: 27rem;">
+                            <div class="inner">
+                                <h4
+                                    style="color:#000000; font-weight: bolder; text-shadow: 8px 8px 8px rgb(5, 5, 5,0.5);">
+                                    Key Points </h4>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Previous Refusal - 1 in USA and 1 in Canada </span>
+                                <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">-Academic gap of 1.5 years or above  </span> <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Visa in 17 days</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container_case">
+                        <div class="front" style="background-color:#000; height: 27rem;">
+                            <div class="inner">
+                                <span style="font-size:17px;"><span style="color:rgb(6, 240, 69) ;"> Name </span> -
+                                Chirag Sathwara <br>
+                                    <span style="color:rgb(6, 240, 69) ;">Institution</span> - Conestoga College
+                                    <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Program </span> -  Graduate Certificate in Project Management <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Campus </span> -  Doon <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Qualification </span> - Master in Physics  <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> IELTS </span> - 6.5/6</span>
+                            </div>
+                        </div>
+                        <div class="back" style="height: 27rem;">
+                            <div class="inner">
+                                <h4
+                                    style="color:#000000; font-weight: bolder; text-shadow: 8px 8px 8px rgb(5, 5, 5,0.5);">
+                                    Key Points </h4>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Over Qualified profile  as completed Master in India </span>
+                                <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">-Academic Gap of 3 year </span> <br>
+                                
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container_case">
+                        <div class="front" style="background-color:#000; height: 27rem;">
+                            <div class="inner">
+                                <span style="font-size:17px;"><span style="color:rgb(6, 240, 69) ;"> Name </span> -
+                                Shaili Jani <br>
+                                    <span style="color:rgb(6, 240, 69) ;">Institution</span> -  Humber College
+                                    <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Program </span> - Graduate Certificate in Research Analyst  <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Campus </span> - international Graduate School campus <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> Qualification </span> - Master in Life Sciences <br>
+                                    <span style="color:rgb(6, 240, 69) ;"> IELTS </span> - 7.5/7</span>
+                            </div>
+                        </div>
+                        <div class="back" style="height:28rem ;">
+                            <div class="inner">
+                                <h4
+                                    style="color:#000000; font-weight: bolder; text-shadow: 8px 8px 8px rgb(5, 5, 5,0.5);">
+                                    Key Points </h4>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Over Qualified profile - Master in Life Science, BSc Biochemistry & Vocational  </span>
+                                <h6 style="color:#000000; font-weight: bolder; text-shadow: 8px 8px 8px rgb(5, 5, 5,0.5);">Biotechnology, B.A. in Psychology from IGNOU </h6> 
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">-1 Refusal  </span> <br>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Changed College and program</span>
+                                <span style="font-size:15px; color: #1f2220; font-weight: 600;">- Earlier applied for Graduate Certificate in Autism and Behavioural Science in Mohawk College</span>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
         <!--===== CONTACT =====-->
         <section class="contact section" id="contact">
             <h2 class="section-title" style="color:black ;">Contact</h2>
 
             <div class="contact__container bd-grid">
                 <form onsubmit="sendmail(); reset(); return false;" class="contact__form" method="post">
-                    <input type="text" placeholder="Name" class="contact__input"  id="name">
+                    <input type="text" placeholder="Name" class="contact__input" id="name">
                     <input type="mail" placeholder="Email" class="contact__input" id="email">
                     <input type="number" class="contact__input" placeholder="Enter your number" id="number">
                     <textarea name="" placeholder="Type a message" id="message" cols="0" rows="10"
                         class="contact__input"></textarea>
-                    <input type="submit" class="contact__button button"
-                        style="background-color:rgb(0, 0, 0) ;">
+                    <input type="submit" class="contact__button button" style="background-color:rgb(0, 0, 0) ;">
                 </form>
             </div>
             <script src="https://smtpjs.com/v3/smtp.js"></script>
             <script>
-                function sendmail(){
-                Email.send({
-                    Host: "smtp.elasticemail.com",
-                    Username: "jyoti.educationconsultant@gmail.com",
-                    Password: "2B9F56E07A1866B7F8A4582AD17B14F325C9",
-                    To: 'jyoti.educationconsultant@gmail.com',
-                    From: 'jyoti.educationconsultant@gmail.com',
-                    Subject: "Message from site",
-                    Body: `${document.getElementById("name").value} <br> Contact:- ${document.getElementById("number").value} <br> Email:-${document.getElementById("number").value} <br> message:- ${document.getElementById("message").value}`.toString()
-                }).then(
-                    message => alert("Mail recieved, You will be contacted soon via email so please stay active on your mail and do check your spam folder")
-                );
-            }
+                function sendmail() {
+                    Email.send({
+                        Host: "smtp.elasticemail.com",
+                        Username: "jyoti.educationconsultant@gmail.com",
+                        Password: "2B9F56E07A1866B7F8A4582AD17B14F325C9",
+                        To: 'jyoti.educationconsultant@gmail.com',
+                        From: 'jyoti.educationconsultant@gmail.com',
+                        Subject: "Message from site",
+                        Body: `${document.getElementById("name").value} <br> Contact:- ${document.getElementById("number").value} <br> Email:-${document.getElementById("number").value} <br> message:- ${document.getElementById("message").value}`.toString()
+                    }).then(
+                        message => alert("Mail recieved, You will be contacted soon via email so please stay active on your mail and do check your spam folder")
+                    );
+                }
             </script>
         </section>
     </main>

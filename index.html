@@ -418,6 +418,113 @@
             transform: translate(0, -3.5rem);
         }
     }
+
+    @import url(https://fonts.googleapis.com/css?family=Oswald|Roboto|Slabo+27px);
+
+    .blog-wrapper {
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .blog-wrapper .blog-card {
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        transition: 0.3s;
+        max-width: 300px;
+        margin: 15px;
+        background: rgb(218, 207, 207);
+        border: 5px solid #292727;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .blog-wrapper:hover .blog-card:hover {
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.8);
+    }
+
+    .blog-wrapper .blog-card:hover .card-img img {
+        opacity: 0.8;
+    }
+
+    .blog-wrapper .blog-card .card-img {
+        position: relative;
+        text-align: center;
+        background: #0b0b0b;
+    }
+
+    .blog-wrapper .blog-card .card-img img {
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        transition: 0.3s;
+        max-height: 180px;
+        width: 100%;
+        border-bottom: 10px solid #a26060;
+    }
+
+    .blog-wrapper .blog-card .card-img:before {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        margin-left: -10px;
+        width: 0;
+        height: 0;
+        border-top: solid 10px #a26060;
+        border-left: solid 10px transparent;
+        border-right: solid 10px transparent;
+    }
+
+    .blog-wrapper .blog-card .card-img h1 {
+        position: absolute;
+        margin: 0;
+        font-size: 42px;
+        bottom: 15px;
+        width: 100%;
+        color: #fff;
+        font-family: "Slabo 27px", serif;
+    }
+
+    .blog-wrapper .blog-card .card-details {
+        margin-top: 30px;
+        font-family: "Roboto", sans-serif;
+        color: #3C3C3C;
+    }
+
+    .blog-wrapper .blog-card .card-details span {
+        padding: 0 30px;
+    }
+
+    .blog-wrapper .blog-card .card-details span i {
+        margin-right: 5px;
+    }
+
+    .blog-wrapper .blog-card .card-text {
+        padding: 30px 15px;
+        font-family: "Roboto", sans-serif;
+        line-height: 22px;
+    }
+
+    .blog-wrapper .blog-card .read-more {
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        transition: 0.3s;
+        display: inline-block;
+        width: auto;
+        text-align: center;
+        text-transform: uppercase;
+        background: #4d4a4b;
+        color: #fff;
+        padding: 15px;
+        margin-bottom: 30px;
+        font-family: "Oswald", sans-serif;
+    }
+
+    .blog-wrapper .blog-card .read-more:hover {
+        background: #5e5c5c;
+    }
 </style>
 
 <body style="background-color: rgb(89, 85, 85,0.2);">
@@ -508,14 +615,80 @@
                         path of success. I’m fueled by my commitment to excellence and go the extra mile to make sure
                         clients are fully satisfied with my work.As a professional Consultant , I believe in maintaining
                         a positive mindset, creating partnerships with a purpose, and always striving for significant
-                        outcomes.Get in touch to learn more about my vision and consulting approach.  </p>
+                        outcomes.Get in touch to learn more about my vision and consulting approach. </p>
                 </div>
             </div>
         </section>
         <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
         <!--===== SKILLS =====-->
-
-
+        <section class="about section">
+            <h2 class="section-title" style="color:black ;">Services</h2>
+        <div class="blog-wrapper">
+            <div class="blog-card" style="height: 34rem;">
+              <div class="card-img"><img src="/assets/img/Interviewee.webp" style="height: 150rem;">
+              </div>
+              <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
+                <h2>Counselling Sessions</h2>
+              </div>
+              <div class="card-text">
+                <p style="font-size:13px;font-weight: 400;">Educating pupils about possibilities for studying abroad, adequate
+                  guidance regarding academic credentials, relevant programmes, accommodation assistance, financial guidance,
+                  counselling regarding each stage, discussion of co-op prospects, academic prerequisites, and English language
+                  competence criteria, Deadlines & Intake, and scholarship opportunities.</p>
+              </div>
+            </div>
+        
+            <div class="blog-card" style="height: 34rem;">
+              <div class="card-img"><img src="/assets/img/A man working on a laptop PC.webp" style="height: 150rem;">
+              </div>
+              <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
+                <h2 style="font-size: 28px;">
+                  Application Assistance</h2>
+              </div>
+              <div class="card-text">
+                <p style="font-size:13px;font-weight: 400;">Examining meticulously the profile of prospective students to aid
+                  them in choosing the finest programmes and institution for in-depth study abroad, providing suitable guidance
+                  on finances, organisations, and programmes. procedure for applying, individually submitting an application for
+                  an offer letter at the students preferred institution.</p>
+              </div>
+            </div>
+            <div class="blog-card" style="height: 34rem;">
+              <div class="card-img"><img src="/assets/img/Two people in graduation gowns.webp" style="height: 150rem;">
+              </div>
+              <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
+                <h2>Visa Assistance </h2>
+              </div>
+              <div class="card-text">
+                <p style="font-size:13px;font-weight: 400;">Providing assistance to the students in acquiring the required
+                  documentation for each of their individual visa applications, the best course of action is to enrol as soon as
+                  possible, even if the length of time you need to apply for your visa varies from one country to another.</p>
+              </div>
+            </div>
+        
+            <div class="blog-card" style="height: 34rem;">
+              <div class="card-img"><img src="/assets/img/Excited Traveler.webp" style="height: 150rem;">
+              </div>
+              <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
+                <h2>Ancillary Services</h2>
+              </div>
+              <div class="card-text">
+                <p style="font-size:13px;font-weight: 400;">Profile Assessment
+                  Statement of Purpose (SOP) review assistance
+                  University & Visa Interview preparation
+                  Visa documentation
+                  Accommodation Search Assistance
+                  Funds / Financial Guidance
+                  Pre-departure Briefing
+                  Application of WES (Depends)
+                  Dependent visa of Canada
+                  Passport Service
+                  CAIPS (In case rejection of Canada)
+                  Medical Appointment Assistance
+                  Ticket Booking Guide</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
     </main>

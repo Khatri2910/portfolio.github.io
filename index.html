@@ -525,6 +525,30 @@
     .blog-wrapper .blog-card .read-more:hover {
         background: #5e5c5c;
     }
+
+    .flex-why {
+        display: flex;
+        flex-wrap: wrap;
+        /* background-color: rgba(60, 61, 62, 0.4); */
+        justify-content: flex-start;
+    }
+
+    .flex-why>div>h6 {
+        font-size: 25px;
+    }
+
+    .flex-why>div {
+        box-shadow: 30px 30px 30px grey;
+        border: 6px solid black;
+        border-radius: 10px;
+        color: #524c4c;
+        background-color: #d5caca;
+        width: 23rem;
+        margin: 10px;
+        text-align: center;
+        /* line-height: 75px; */
+        font-size: 30px;
+    }
 </style>
 
 <body style="background-color: rgb(89, 85, 85,0.2);">
@@ -623,73 +647,182 @@
         <!--===== SKILLS =====-->
         <section class="about section">
             <h2 class="section-title" style="color:black ;">Services</h2>
-        <div class="blog-wrapper">
-            <div class="blog-card" style="height: 40rem;width: 18rem;">
-              <div class="card-img"><img src="./assets/img/Interviewee.webp" style="height: 150rem;">
-              </div>
-              <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
-                <h2>Counselling Sessions</h2>
-              </div>
-              <div class="card-text">
-                <p style="font-size:13px;font-weight: 400;">Educating pupils about possibilities for studying abroad, adequate
-                  guidance regarding academic credentials, relevant programmes, accommodation assistance, financial guidance,
-                  counselling regarding each stage, discussion of co-op prospects, academic prerequisites, and English language
-                  competence criteria, Deadlines & Intake, and scholarship opportunities.</p>
-              </div>
-            </div>
-        
-            <div class="blog-card" style="height: 40rem;width: 18rem;">
-              <div class="card-img"><img src="./assets/img/A man working on a laptop PC.webp" style="height: 150rem;">
-              </div>
-              <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
-                <h2 style="font-size: 28px;">
-                  Application Assistance</h2>
-              </div>
-              <div class="card-text">
-                <p style="font-size:13px;font-weight: 400;">Examining meticulously the profile of prospective students to aid
-                  them in choosing the finest programmes and institution for in-depth study abroad, providing suitable guidance
-                  on finances, organisations, and programmes. procedure for applying, individually submitting an application for
-                  an offer letter at the students preferred institution.</p>
-              </div>
-            </div>
-            <div class="blog-card" style="height: 40rem;width: 18rem;">
-              <div class="card-img"><img src="./assets/img/Two people in graduation gowns.webp" style="height: 150rem;">
-              </div>
-              <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
-                <h2>Visa Assistance </h2>
-              </div>
-              <div class="card-text">
-                <p style="font-size:13px;font-weight: 400;">Providing assistance to the students in acquiring the required
-                  documentation for each of their individual visa applications, the best course of action is to enrol as soon as
-                  possible, even if the length of time you need to apply for your visa varies from one country to another.</p>
-              </div>
-            </div>
-        
-            <div class="blog-card" style="height: 40rem;width: 18rem;">
-              <div class="card-img"><img src="./assets/img/Excited Traveler.webp" style="height: 150rem;">
-              </div>
-              <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
-                <h2>Ancillary Services</h2>
-              </div>
-              <div class="card-text">
-                <p style="font-size:13px;font-weight: 400;">Profile Assessment
-                  Statement of Purpose (SOP) review assistance
-                  University & Visa Interview preparation
-                  Visa documentation
-                  Accommodation Search Assistance
-                  Funds / Financial Guidance
-                  Pre-departure Briefing
-                  Application of WES (Depends)
-                  Dependent visa of Canada
-                  Passport Service
-                  CAIPS (In case rejection of Canada)
-                  Medical Appointment Assistance
-                  Ticket Booking Guide</p>
-              </div>
-            </div>
-          </div>
-        </section>
+            <div class="blog-wrapper">
+                <div class="blog-card" style="height: 40rem;width: 18rem;">
+                    <div class="card-img"><img src="./assets/img/Interviewee.webp" style="height: 150rem;">
+                    </div>
+                    <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
+                        <h2>Counselling Sessions</h2>
+                    </div>
+                    <div class="card-text">
+                        <p style="font-size:13px;font-weight: 400;">Educating pupils about possibilities for studying
+                            abroad, adequate
+                            guidance regarding academic credentials, relevant programmes, accommodation assistance,
+                            financial guidance,
+                            counselling regarding each stage, discussion of co-op prospects, academic prerequisites, and
+                            English language
+                            competence criteria, Deadlines & Intake, and scholarship opportunities.</p>
+                    </div>
+                </div>
 
+                <div class="blog-card" style="height: 40rem;width: 18rem;">
+                    <div class="card-img"><img src="./assets/img/A man working on a laptop PC.webp"
+                            style="height: 150rem;">
+                    </div>
+                    <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
+                        <h2 style="font-size: 28px;">
+                            Application Assistance</h2>
+                    </div>
+                    <div class="card-text">
+                        <p style="font-size:13px;font-weight: 400;">Examining meticulously the profile of prospective
+                            students to aid
+                            them in choosing the finest programmes and institution for in-depth study abroad, providing
+                            suitable guidance
+                            on finances, organisations, and programmes. procedure for applying, individually submitting
+                            an application for
+                            an offer letter at the students preferred institution.</p>
+                    </div>
+                </div>
+                <div class="blog-card" style="height: 40rem;width: 18rem;">
+                    <div class="card-img"><img src="./assets/img/Two people in graduation gowns.webp"
+                            style="height: 150rem;">
+                    </div>
+                    <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
+                        <h2>Visa Assistance </h2>
+                    </div>
+                    <div class="card-text">
+                        <p style="font-size:13px;font-weight: 400;">Providing assistance to the students in acquiring
+                            the required
+                            documentation for each of their individual visa applications, the best course of action is
+                            to enrol as soon as
+                            possible, even if the length of time you need to apply for your visa varies from one country
+                            to another.</p>
+                    </div>
+                </div>
+
+                <div class="blog-card" style="height: 40rem;width: 18rem;">
+                    <div class="card-img"><img src="./assets/img/Excited Traveler.webp" style="height: 150rem;">
+                    </div>
+                    <div class="card-details" style="margin-top: 0.5rem;margin-bottom: -1rem">
+                        <h2>Ancillary Services</h2>
+                    </div>
+                    <div class="card-text">
+                        <p style="font-size:13px;font-weight: 400;">Profile Assessment
+                            Statement of Purpose (SOP) review assistance
+                            University & Visa Interview preparation
+                            Visa documentation
+                            Accommodation Search Assistance
+                            Funds / Financial Guidance
+                            Pre-departure Briefing
+                            Application of WES (Depends)
+                            Dependent visa of Canada
+                            Passport Service
+                            CAIPS (In case rejection of Canada)
+                            Medical Appointment Assistance
+                            Ticket Booking Guide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+        <section class="about section">
+            <h2 class="section-title" style="color:black ;">Why study Abroad</h2>
+            <div class="flex-why">
+                <div>
+                    <h6 style="margin: 0px;">01)Explore the globe:-</h6>
+                    <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+                    <p style="font-size: 18px;margin: 1rem;">chance to travel the world is the main justification for
+                        considering a study
+                        abroad programme. You will discover a completely new culture with amazing new outlooks, customs,
+                        and
+                        activities by studying abroad. The chance to see new landscapes, natural marvels, museums, and
+                        landmarks
+                        in your host country is one of the advantages of studying abroad.</p>
+                </div>
+                <div>
+                    <h6 style="margin: 0px;">02)Quality Education:-</h6>
+                    <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+                    <p style="font-size: 18px;margin: 1rem;">You might think about going abroad to study in order to
+                        experience various educational systems. You will get the chance to experience an aspect of your
+                        major that you might not have had exposure to at home by signing up for a study abroad
+                        programme.You'll discover that the only way to truly experience and comprehend the people, their
+                        customs, and their culture is to fully immerse oneself in the educational system of your host
+                        nation. Since the main focus of any study abroad programme is education, choose the correct
+                        school is crucial. Education is the main focus of any study abroad trip.</p>
+                </div>
+                <div>
+                    <h6 style="margin: 0px;">03)Learn About a New Culture:-</h6>
+                    <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+                    <p style="font-size: 18px;margin: 1rem;">Many students who opt to study abroad are making their
+                        first trip away from home. They are enthralled by the various cultural viewpoints of their new
+                        home country. Amazingly different cuisines, cultures, traditions, and social settings await you
+                        when you study abroad.You'll discover that you are more knowledgeable about and respectful of
+                        the people and history of the country. You will get the chance to see an entirely different way
+                        of living firsthand.</p>
+                </div>
+                <div>
+                    <h6 style="margin: 0px;">04)Admission to Higher Education:-</h6>
+                    <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+                    <p style="font-size: 18px;margin: 1rem;">Graduate school admissions committees place a great value
+                        on study abroad experiences, just like potential employers will. Students who travel demonstrate
+                        their diversity and their willingness to take on new challenges and confront challenging
+                        circumstances.Students who have studied abroad most importantly demonstrate their dedication to
+                        their study. Graduate schools frequently search for applicants who will add something
+                        distinctive to their institution. Studying abroad has demonstrated that students have the
+                        intellectual curiosity and leadership skills necessary for success in graduate school.</p>
+                </div>
+                <div>
+                    <h6 style="margin: 0px;">05)Career Advancement:-</h6>
+                    <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+                    <p style="font-size: 18px;margin: 1rem;">Nothing compares to being by yourself in a foreign country.
+                        You could discover that going abroad for school really brings out your independence. Studying
+                        abroad encourages students to explore their host country and really tap into their innate
+                        curiosity and passion.The chance to learn about yourself while immersing oneself in a new
+                        culture is one advantage of studying abroad. Being alone in a strange environment can be
+                        intimidating at times, and it puts your capacity for problem-solving and adaptation to a test.
+                    </p>
+                </div>
+                <div>
+                    <h6 style="margin: 0px;">06)Find New Interests:-</h6>
+                    <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+                    <p style="font-size: 18px;margin: 1rem;">If you're still not sure why you should study abroad, you
+                        should know that doing so opens up a wide range of new opportunities for you to explore your
+                        interests and try new things that you might not have known about at home. You might learn that
+                        you have a talent for golf, water sports, snow skiing, hiking, or other new activities that you
+                        may not have attempted at home.In addition, you'll get the chance to explore various
+                        cutting-edge kinds of entertainment. Just a few of the events you can take part in include
+                        plays, movies, dancing, nightclubs, and concerts.</p>
+                </div>
+                <div>
+                    <h6 style="margin: 0px;">07)Make enduring friendships:-</h6>
+                    <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+                    <p style="font-size: 18px;margin: 1rem;">Learning about new cultures and making lifetime friends
+                        from various backgrounds is one of the main advantages of studying abroad. You'll live and
+                        attend classes with students from your host nation while you're studying abroad. You have the
+                        chance to bond with your fellow students and get to know them on a deeper level as a result of
+                        this.Try to keep in touch with your overseas pals once the study abroad programme has ended.
+                        These buddies can be valuable resources for networking later on in addition to fostering
+                        fulfilling personal relationships.</p>
+                </div>
+                <div>
+                    <h6 style="margin: 0px;">08)Benefits of International Study:-</h6>
+                    <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+                        <p style="font-size: 18px; margin: 1rem;">There are so many benefits to studying abroad.
+                            Students
+                            get the opportunity to personally encounter various cultures, religions, and ways of
+                            thinking,
+                            which improves their outlook on life and increases their acceptance and tolerance of
+                            minorities.
+                            By exposing students to a diversity of fresh viewpoints, the newest technology, or cutting
+                            edge
+                            research and training, it can advance their professional careers. Studying abroad has
+                            numerous
+                            advantages, but maybe the most significant one is that it helps us better understand the
+                            world
+                            we live in.</p>
+                </div>
+            </div>
+        </section>
 
     </main>
 

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Jyoti Khatri </title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    /* h1 {
+        font-size: 2.5rem;
+        font-family: 'Montserrat';
+        font-weight: normal;
+        color: #444;
+        text-align: center;
+        margin: 2rem 0;
+    } */
+    
+    .wrap {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 80rem;
+    }
+    
+    .cols {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    
+    .col {
+        width: calc(25% - 2rem);
+        margin: 1rem;
+        cursor: pointer;
+    }
+    
+    .container_case {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+    }
+    
+    .front,
+    .back {
+        background-size: cover;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        background-position: center;
+        -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        text-align: center;
+        min-height: 280px;
+        height: auto;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    
+    .back {
+        background: #cedce7;
+        background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+        background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+        background: linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+    }
+    
+    .front:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        opacity: .6;
+        background-color: #000;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 10px;
+    }
+    
+    .container_case:hover .front,
+    .container_case:hover .back {
+        -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    
+    .inner {
+        -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+        transform: translateY(-50%) translateZ(60px) scale(0.94);
+        top: 50%;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: 1px solid transparent;
+        -webkit-perspective: inherit;
+        perspective: inherit;
+        z-index: 2;
+    }
+    
+    .container_case .back {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    
+    .container_case .front {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    
+    .container_case:hover .back {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    
+    .container_case:hover .front {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    
+    .front .inner p {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+    
+    .front .inner p:after {
+        content: '';
+        width: 4rem;
+        height: 2px;
+        position: absolute;
+        background: #C6D4DF;
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -.75rem;
+    }
+    
+    .front .inner span {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: 'Montserrat';
+        font-weight: 300;
+    }
+    
+    @media screen and (max-width: 64rem) {
+        .col {
+            width: calc(33.333333% - 2rem);
+        }
+    }
+    
+    @media screen and (max-width: 48rem) {
+        .col {
+            width: calc(50% - 2rem);
+        }
+    }
+    
+    @media screen and (max-width: 32rem) {
+        .col {
+            width: 100%;
+            margin: 0 0 2rem 0;
+        }
+    }
+    
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+     ::selection {
+        color: #fff;
+        background: #1cc7d0;
+    }
+    
+    .wrapper {
+        height: 400px;
+        width: 320px;
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+    
+    .wrapper .card {
+        position: absolute;
+        color: aliceblue;
+        height: 100%;
+        width: 100%;
+        padding: 5px;
+        background: #626e99;
+        border-radius: 10px;
+        transform: translateY(0deg);
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    
+    .wrapper:hover>.front-face {
+        transform: rotateY(-180deg);
+    }
+    
+    .wrapper .card img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
+    .wrapper .back-face {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        transform: rotateY(180deg);
+    }
+    
+    .wrapper:hover>.back-face {
+        transform: rotateY(0deg);
+    }
+    
+    .wrapper .back-face img {
+        height: 150px;
+        width: 150px;
+        padding: 5px;
+        border-radius: 50%;
+        background: linear-gradient(375deg, #a96767, #2e7ade);
+    }
+    
+    .wrapper .back-face .info {
+        text-align: center;
+    }
+    
+    .back-face .info .title {
+        font-size: 30px;
+        font-weight: 500;
+    }
+    
+    .back-face ul {
+        display: flex;
+    }
+    
+    .back-face ul a {
+        display: block;
+        height: 40px;
+        width: 40px;
+        color: #fff;
+        text-align: center;
+        margin: 0 5px;
+        line-height: 38px;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        background: linear-gradient(375deg, #1cc7d0, #2ede98);
+        transition: all 0.5s ease;
+    }
+    
+    .back-face ul a:hover {
+        color: #1cc7d0;
+        border-color: #1cc7d0;
+        background: linear-gradient(375deg, transparent, transparent);
+    }
+    
+    body {
+        background-color: #dae1e6;
+    }
+    
+    #box {
+        background-color: rgba(93, 85, 85, 0.1) !important;
+    }
+    
+    .box:hover {
+        /* border-radius: 10px; */
+        background-color: rgba(31, 31, 31, 0.4);
+        color: rgb(255, 255, 255) !important;
+        border: 1px solid black;
+        padding: 2px;
+        box-shadow: 5px 5px 5px rgb(7, 6, 6);
+    }
+    
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+    .achievements {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .achievements .box_achievments {
+        position: relative;
+        width: 20rem;
+        height: 20rem;
+        margin: 4rem;
+    }
+    
+    .achievements .box_achievments:hover .imgbox_achievments {
+        box-shadow: 10px 12px 10px rgb(82, 82, 79);
+        transform: translate(-3.5rem, -7.5rem);
+    }
+    
+    .achievements .box_achievments:hover .content {
+        transform: translate(3.5rem, 3.5rem);
+    }
+    
+    .imgbox_achievments {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .imgbox_achievments img {
+        border-radius: 10px;
+        border: 10px solid rgb(22, 18, 18);
+        width: 20rem;
+        height: 20rem;
+        object-fit: cover;
+        resize: both;
+    }
+    
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem;
+        display: flex;
+        color: aliceblue;
+        justify-content: center;
+        background-color: rgb(110, 99, 99);
+        z-index: 1;
+        align-items: flex-end;
+        text-align: center;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .content h2 {
+        display: block;
+        font-size: 2rem;
+        color: rgb(255, 208, 208);
+        font-weight: bold;
+        line-height: 20rem;
+        letter-spacing: 1px;
+    }
+    
+    .content span {
+        color: rgb(255, 255, 255);
+        font-size: 1.4rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    
+    @media (max-width: 600px) {
+        .achievements .box_achievments:hover .content {
+            transform: translate(0, 9.5rem);
+        }
+        .achievements .box_achievments:hover .imgbox_achievments {
+            transform: translate(0, -3.5rem);
+        }
+    }
+</style>
+
+<body style="background-color: rgb(89, 85, 85,0.2);">
+    <!--===== HEADER =====-->
+    <header class="l-header" style="background-color:#000000 ;">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo box" style="color:aliceblue ;">JYOTI KHATRI</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a style="color:aliceblue ;" href="index.html" class="nav__link box">Home</a>
+                    </li>
+
+                    <li class="nav__item"><a style="color:aliceblue ;" href="professional.html" class="nav__link box">More About Me</a></li>
+
+                    <li class="nav__item"><a style="color:aliceblue ;" href="casestudies.html" class="nav__link box">Case Studies</a>
+                    </li>
+                    <li class="nav__item"><a style="color:aliceblue ;" href="testimonials.html" class="nav__link box">Testimonies</a>
+                    </li>
+                    <li class="nav__item"><a style="color:aliceblue ;" href="contact.html" class="nav__link box">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background-color: aliceblue;" class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+
+        <hr style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px; margin-top: 10rem;">
+        <!--===== SKILLS =====-->
+        <section class="skills section " id="skills" style="margin-top: -5rem ;">
+            <h2 class="section-title" style="color: black;">PERSONAL INFORMATION</h2><br>
+
+            <div class="skills__container bd-grid" style="display: inline;">
+                <div>
+                    <h2 class="skills__subtitle">Profesional Skills</h2>
+                    <p class="skills__text">As an education consultant, I am dedicated to providing accurate information to prospective clients. I began my journey in 2019 and have since counseled more than 3000 students on their aspirations to study overseas. Be committed to
+                        a smooth application and visa procedure. Being recognised as a reliable education consultant for international studies.</p>
+                    <div class="w3-container w3-card w3-white w3-margin-bottom" id="box" style="background-color:rgba(255, 255, 255, 0.1)  ;">
+                        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience
+                        </h2>
+                        <div class="w3-container">
+                            <h5 class="w3-opacity"><b>Education Consultant / AECC Global</b></h5>
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>January 2024 -
+                                <span class="w3-tag w3-teal w3-round">Present </span>
+                            </h6>
+                            <p>Assisting students in exploring international study opportunities, offering comprehensive guidance on financial considerations, reputable institutions, and diverse programs available. Streamlining the application process for
+                                students seeking offer letters from their preferred institutions, and facilitating the acquisition of necessary documents for individual visa applications. Actively engaging in seminars and education fairs organized by
+                                universities, adeptly addressing inquiries from prospective students and providing optimal solutions.
+                            </p>
+                            <hr>
+                        </div>
+                        <div class="w3-container">
+                            <h5 class="w3-opacity"><b>Education Consultant / AECC Global</b></h5>
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>February 2022 - December 2023</span>
+                            </h6>
+                            <p>Informing students about opportunities for international study, Providing suitable guidance on finances, institutions and programmes, the application procedure, submitting an application for an offer letter at the students'
+                                desired institution, helping the students acquire the documents they will need for each of their individual visa applications, actively participate in seminars and education fairs hosted by various universities, able to
+                                understand the questions of potential aspirant and offer the best solutions.
+                            </p>
+                            <hr>
+                        </div>
+                        <div class="w3-container">
+                            <h5 class="w3-opacity"><b>Designation - Education Consultant / Aussizz Group</b></h5>
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2021 - January 2022</h6>
+                            <p>Worked actively as an education consultant for Canada and the UK, advising students on studying abroad and helping them select a course and university, as well as assisting them in obtaining the correct or necessary paperwork
+                                for further procedure. filling out applications for students in institutions, student preparation for interviews (CAS, creditability, and other aspects), aiding in the creation of compelling Statements of Purpose for both
+                                countries, recommending the right financial requirements throughout the process, actively taking part in branding activities, and other events hosted by the appropriate authorities.</p>
+                            <hr>
+                        </div>
+                        <div class="w3-container">
+                            <h5 class="w3-opacity"><b>Designation - Student Visa Counsellor / Sky Heaven Holiday &
+                                    Immigration
+                                </b></h5>
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sept 2019 - April 2021</h6>
+                            <p>Served as a student visa advisor mostly for Canada, the USA, and the UK, keeping students in mind by responding to their inquiries on the finest colleges or programmes for them. assisting them to acquire the appropriate or
+                                required documentation for the following stage, filing for student visas, working in harmony and with dedication, managing the IELTS and student visa departments, communicating with coworkers or faculty members, and receiving
+                                periodic updates on the prospective student's visa application. </p><br>
+                        </div>
+                        <div class="w3-container">
+                            <h5 class="w3-opacity"><b>Designation - Teaching Faculty / STC Education
+                                </b></h5>
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2018 - June 2019
+                            </h6>
+                            <p>English and social studies tutorial reviewing course content and assignments, helping students with their homework, projects, exam preparation, papers, research, and other academic chores, helping kids understand important
+                                ideas, especially those gained in class, Effective recordkeeping requires answering questions. </p><br>
+                        </div>
+                    </div>
+
+                    <div class="w3-container w3-card w3-white" style="background-color:rgb(128, 128, 128,0.1) !important ;" id="box">
+                        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education
+                        </h2>
+
+                        <div class="w3-container">
+                            <h5 class="w3-opacity"><b>Post Graduation Diploma in International Business </b></h5>
+
+                            <p>It aims to prepare facing the challenges and issues in international business Helpful for implementation of marketing and financial principles and strategies in multinational and global markets,focus on International Economics,
+                                Cultural, Political and Legal Environment, how they are integrated and studied as prelude to planning strategies for international business ​
+
+                            </p>
+                            <hr>
+                        </div>
+                        <div class="w3-container">
+                            <h5 class="w3-opacity"><b>Bachelor of Commerce </b></h5>
+
+                            <p>It imparts the managerial Skills while Focusing on a particular Business area, Helpful to Gain in-depth Knowledge on core subjects such as accounting,law,statistics,finance, marketing, Economic, HRM just to name a few.</p><br>
+                        </div>
+                    </div>
+
+                    <!-- End Right Column -->
+                </div>
+
+                <!-- End Grid -->
+            </div>
+            <!-- End Page Container -->
+            </div>
+            </div>
+        </section>
+
+        <hr id="case" style="border: 2px solid rgb(103, 90, 90);margin-left: 20px;margin-right: 20px;border-radius: 60px;">
+
+
+        <h2 class="section-title" style="color:black ;" id="work">Rewards and Recognition</h2>
+        <div class="achievements" style="font-size:10px ;">
+            <div class="box_achievments">
+                <div class="imgbox_achievments">
+                    <img src="assets\img\work9.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h5 style="font-size:20px ;">Top Performing Consultant Award Canada(1st Runner Up)
+                        <span style="font-size:15px ;">Issuing Organization - AECC Global</span>
+                    </h5>
+                </div>
+            </div>
+            <div class="box_achievments">
+                <div class="imgbox_achievments">
+                    <img src="assets\img\work8.png" alt="">
+                </div>
+                <div class="content">
+                    <h5 style="font-size:20px ;">Star performer super nova for acceptance
+                        <span style="font-size:15px ;">Issuing Organization - AECC Global</span>
+                    </h5>
+                </div>
+            </div>
+            <div class="box_achievments">
+                <div class="imgbox_achievments">
+                    <img src="assets/img/work1.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h5 style="font-size:20px ;">Canada Training & Certification Program
+                        <span style="font-size:15px ;">Issuing Organization - AECC Global</span>
+                    </h5>
+                </div>
+            </div>
+            <div class="box_achievments">
+                <div class="imgbox_achievments">
+                    <img src="assets/img/work2.png" alt="">
+                </div>
+                <div class="content">
+                    <h5 style="font-size:20px">Social Change : How can Marketing Help</br>
+                        <span style="font-size:15px ;">Issuing Organization - Griffith University</span>
+                    </h5>
+                </div>
+            </div>
+            <div class="box_achievments">
+                <div class="imgbox_achievments">
+                    <img src="assets/img/work3.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h5 style="font-size:20px">Qualified Canada Consultant</br>
+                        <span style="font-size:15px ;">Issuing Organization - AECC Global</span>
+                    </h5>
+                </div>
+            </div>
+            <div class="box_achievments">
+                <div class="imgbox_achievments">
+                    <img src="assets/img/work4.png" alt="">
+                </div>
+                <div class="content">
+                    <h5 style="font-size:20px">Digital Skill : Social Media</br>
+                        <span style="font-size:15px ;">Issuing Organization - The CPD Certification Service</span>
+                    </h5>
+                </div>
+            </div>
+            <div class="box_achievments">
+                <div class="imgbox_achievments">
+                    <img src="assets/img/work5.png" alt="">
+                </div>
+                <div class="content" style="margin-bottom: 1rem;">
+                    <h5 style="font-size:20px">Study UK : Prepare to Study & Live in the UK</br>
+                        <span style="font-size:15px ;">Issuing Organization - British Council</span>
+                    </h5>
+                </div>
+            </div>
+            <div class="box_achievments">
+                <div class="imgbox_achievments " style="width: 250px;">
+                    <img src="assets/img/work7.png" alt="" style="width: 250px;">
+                </div>
+                <div class="content" style="margin-bottom: 1rem;width: 250px;">
+                    <h5 style="font-size:17px">Star Performer Supernova Award of acceptances of the Canada (March 23)</br>
+                        <span style="font-size:15px ;">ISSUING ORGANIZATION-AECC</span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+        <p class="footer__title">JYOTI</p>
+        <div class="footer__social">
+            <a href="https://www.linkedin.com/in/jyoti2910" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://instagram.com/_jyoti_khatri_?igshid=ZDdkNTZiNTM=" class="footer__icon"><i
+                    class='bx bxl-instagram'></i></a>
+            <a href="https://twitter.com/Khatrijyoti2910?t=qWs1J9gALPp-LpjtKaMV8Q&s=08" class="footer__icon"><i
+                    class='bx bxl-twitter'></i></a>
+        </div>
+        <p class="footer__copy">&#169;All rigths reserved</p>
+    </footer>
+
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
